@@ -1,0 +1,48 @@
+<div ng-controller="QACtrl">
+    
+  <h1>ILAB PRODUCT SECURITY STANDARDS</h1>
+      <form action="/action_page.php">
+    <div class="form-group">
+      <label for="projectName">Project Name:</label>
+      <input type="projectName" class="form-control" id="projectName">
+      <label for="ManagersName">Managers Name:</label>
+      <input type="ManagersName" class="form-control" id="ManagersName">
+      <label for="ReleaseDate">Release Date:</label>
+      <input type="ReleaseDate" class="form-control" id="ReleaseDate">
+    </div>
+    <uib-accordion close-others="oneAtATime">
+      <uib-accordion-group heading="{{item.desc}}"  ng-repeat="item in items">
+          <div class="ans">
+              <button class="btn btn-primary" ng-click="myResponse($event,item.desc)">Yes</button>
+              <button class="btn btn-danger" ng-click="myResponse($event,item.desc)">No</button>
+                <!-- Button trigger modal -->
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal{{$index}}">
+                More Info
+              </button>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="myModal{{$index}}" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="myModalTitle">More Info</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    {{item.info}}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div> 
+      </uib-accordion-group>  
+          
+    </uib-accordion>
+          <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  </div>
