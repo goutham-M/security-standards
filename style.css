@@ -1,8 +1,20 @@
 /* Styles go here */
 
 .btn-info{
-        float: right;
+    float: right;
 }
 .panel-default>.panel-heading {
     background-color: #dae9d4;
+}
+
+.content {
+    margin: 10px;
+}
+
+.cursorPtr {
+    cursor: pointer;
+}
+
+.ml {
+    margin: 0 0 10px 50px;
 }

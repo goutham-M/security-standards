@@ -1,4 +1,7 @@
-angular.module('security-ques').controller('QACtrl', function ($scope) {
+angular.module('security-ques').controller('QACtrl', function ($scope, $http) {
+    $scope.jsonObj = {
+        standards: []
+    };
     $scope.oneAtATime = true;
       $scope.items = [
                       {
@@ -291,12 +294,22 @@ angular.module('security-ques').controller('QACtrl', function ($scope) {
     //console.log($scope.items);
   //console.log(JSON.parse(items.replace(/\n/g, "\\n")));
       
-    $scope.myResponse = function(event,desc){
+    $scope.myResponse = function(event,Question){
       console.log(event.target.innerText);
-      this.jsonObj={
+      $scope.jsonObj.standards.push({
           Ans: event.target.innerText,
-          Desc: desc
-      }
-      console.log(this.jsonObj);
+          Question: Question
+      });
+    }
+
+    $scope.save = function() {
+        $http.post('http://localhost:8080/security-standard',$scope.jsonObj)
+        .then(function(result) {
+           
+          }, function() {
+           
+          }
+        );
+  
     }
 });
