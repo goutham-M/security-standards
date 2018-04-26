@@ -1,0 +1,4 @@
+<div ng-controller="DownloadCtrl">
+    <div ng-repeat="qa in qaList" class="ml"><a class="cursorPtr" ng-click="generatePDF(qa)">
+        {{qa.projectName+'_'+qa.date | date:'medium'+'.pdf'}}</a></div>
+</div>

@@ -1,12 +1,12 @@
 <div ng-controller="QACtrl">
     
   <h1>ILAB PRODUCT SECURITY STANDARDS</h1>
-      <form action="/action_page.php">
+    <form>
     <div class="form-group">
       <label for="projectName">Project Name:</label>
-      <input type="projectName" class="form-control" id="projectName">
-      <label for="ManagersName">Managers Name:</label>
-      <input type="ManagersName" class="form-control" id="ManagersName">
+      <input type="projectName" ng-model="jsonObj.projectName" class="form-control" id="projectName">
+      <label for="ManagersName">Manager Name:</label>
+      <input type="ManagerName" ng-model="jsonObj.managerName" class="form-control" id="ManagerName">
       <label for="ReleaseDate">Release Date:</label>
       <input type="ReleaseDate" class="form-control" id="ReleaseDate">
     </div>
@@ -43,6 +43,6 @@
       </uib-accordion-group>  
           
     </uib-accordion>
-          <button type="submit" class="btn btn-default">Submit</button>
+    <button ng-click="save()" type="submit" class="btn btn-default">Submit</button>
   </form>
   </div>

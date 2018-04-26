@@ -2,16 +2,10 @@ angular.module('security-ques', ['ngAnimate', 'ui.bootstrap', 'ngRoute'])
 .config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: 'qa.html',
-            controller: ['$scope', function($scope){
-                $scope.page = 'home';
-            }]
+            templateUrl: 'qa.html'
         })
-        .when('/about', {
-            template: '<h2>{{page}}</h2>',
-            controller: ['$scope', function($scope){
-                $scope.page = 'about';
-            }]
+        .when('/download', {
+            templateUrl: 'download.html'
         })
         .otherwise({redirectTo: '/'});
 }]);
